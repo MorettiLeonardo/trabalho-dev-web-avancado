@@ -48,6 +48,20 @@ Se ja instalada, atualizar:
 dotnet tool update --global dotnet-ef
 ```
 
+## Como rodar migrations
+
+Criar a primeira migration:
+
+```bash
+dotnet ef migrations add {nomeMigration}
+```
+
+Aplicar ao banco de dados:
+
+```bash
+dotnet ef database update
+```
+
 ## Como rodar o projeto
 
 Na pasta do projeto:
@@ -62,19 +76,7 @@ Swagger:
 
 - `http://localhost:5161/swagger`
 
-## Como rodar migrations
 
-Criar a primeira migration:
-
-```bash
-dotnet ef migrations add {nomeMigration}
-```
-
-Aplicar ao banco de dados:
-
-```bash
-dotnet ef database update
-```
 
 Exemplo:
 
@@ -90,12 +92,3 @@ dotnet ef database update
 - `api/clientes`
 
 Todos com CRUD completo (`GET`, `GET por id`, `POST`, `PUT`, `DELETE`).
-
-## Possiveis erros comuns
-
-- `Unknown database 'banco'`
-  - Crie o banco manualmente no phpMyAdmin ou rode `dotnet ef database update`.
-- `Access denied for user 'root'`
-  - Verifique usuario/senha na connection string.
-- `Host 'NOME-DO-PC' is not allowed to connect`
-  - Ajuste permissoes do usuario no MySQL/MariaDB.
