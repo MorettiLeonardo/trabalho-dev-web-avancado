@@ -32,8 +32,6 @@ Use uma connection string valida para seu XAMPP/MySQL:
 }
 ```
 
-Se sua porta for diferente (ex.: `3307`) ou tiver senha no `root`, ajuste os valores.
-
 ## Ferramenta de Migrations
 
 Instalar ferramenta global `dotnet-ef`:
@@ -62,6 +60,14 @@ Aplicar ao banco de dados:
 dotnet ef database update
 ```
 
+
+Exemplo:
+
+```bash
+dotnet ef migrations add Inicial
+dotnet ef database update
+```
+
 ## Como rodar o projeto
 
 Na pasta do projeto:
@@ -76,14 +82,6 @@ Swagger:
 
 - `http://localhost:5161/swagger`
 
-
-
-Exemplo:
-
-```bash
-dotnet ef migrations add Inicial
-dotnet ef database update
-```
 
 ## Endpoints principais
 
