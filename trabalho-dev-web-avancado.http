@@ -1,0 +1,92 @@
+@trabalho_dev_web_avancado_HostAddress = http://localhost:5161
+
+### PRODUTO - POST (201 Created)
+POST {{trabalho_dev_web_avancado_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Teclado Mecânico",
+  "preco": 199.90,
+  "estoque": 10
+}
+
+### PRODUTO - PUT (204 No Content)
+PUT {{trabalho_dev_web_avancado_HostAddress}}/api/produtos/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "Mouse Gamer RGB",
+  "preco": 149.90,
+  "estoque": 25
+}
+
+### CATEGORIA - POST (201 Created)
+POST {{trabalho_dev_web_avancado_HostAddress}}/api/categorias
+Content-Type: application/json
+
+{
+  "nome": "Informática",
+  "descricao": "Itens eletrônicos de informática"
+}
+
+### CATEGORIA - PUT (204 No Content)
+PUT {{trabalho_dev_web_avancado_HostAddress}}/api/categorias/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "nome": "Acessórios",
+  "descricao": "Produtos adicionais e periféricos"
+}
+
+### CLIENTE - POST (201 Created)
+POST {{trabalho_dev_web_avancado_HostAddress}}/api/clientes
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao.silva@email.com",
+  "idade": 30
+}
+
+### CLIENTE - PUT (204 No Content)
+PUT {{trabalho_dev_web_avancado_HostAddress}}/api/clientes/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "nome": "Ana Maria Oliveira",
+  "email": "ana.oliveira@email.com",
+  "idade": 28
+}
+
+### ERRO PRODUTO - Nome inválido (400)
+POST {{trabalho_dev_web_avancado_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "A",
+  "preco": 100,
+  "estoque": 5
+}
+
+### ERRO PRODUTO - Preço inválido (400)
+POST {{trabalho_dev_web_avancado_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Produto Teste",
+  "preco": 0,
+  "estoque": 5
+}
+
+### ERRO PRODUTO - Estoque negativo (400)
+POST {{trabalho_dev_web_avancado_HostAddress}}/api/produtos
+Content-Type: application/json
+
+{
+  "nome": "Produto Teste",
+  "preco": 50,
+  "estoque": -3
+}
